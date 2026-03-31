@@ -19,6 +19,7 @@ export function MeasurementCanvas({ image }: MeasurementCanvasProps) {
   const [showScaleInput, setShowScaleInput] = useState(false);
   const [tempScaleLength, setTempScaleLength] = useState("10");
   const [zoom, setZoom] = useState(1);
+  const [showDebug, setShowDebug] = useState(false);
   
   const {
     activeTool,
@@ -366,6 +367,15 @@ export function MeasurementCanvas({ image }: MeasurementCanvasProps) {
           <Button variant="outline" size="sm" onClick={handleClear}>
             <Trash2 className="w-4 h-4 mr-2" />
             Clear
+          </Button>
+          
+          {/* Debug toggle */}
+          <Button 
+            variant={showDebug ? "default" : "outline"} 
+            size="sm" 
+            onClick={() => setShowDebug(!showDebug)}
+          >
+            🐛 Debug
           </Button>
         </div>
       </div>
